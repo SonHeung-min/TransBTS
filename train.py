@@ -157,7 +157,7 @@ def main_worker():
     else:
         logging.info('re-training!!!')
 
-    train_list = os.path.join(args.root, args.train_dir, args.train_file)
+    train_list = "/kaggle/working/TransBTS/data/train.txt"
     train_root = os.path.join(args.root, args.train_dir)
 
     train_set = BraTS(train_list, train_root, args.mode)
