@@ -158,7 +158,7 @@ def main_worker():
         logging.info('re-training!!!')
 
     train_list = "/kaggle/working/TransBTS/data/train.txt"
-    train_root = os.path.join(args.root, args.train_dir)
+    train_root = "/kaggle/input/brats2020-pkl/BraTS2020_pkl"
 
     train_set = BraTS(train_list, train_root, args.mode)
     train_sampler = torch.utils.data.distributed.DistributedSampler(train_set)
