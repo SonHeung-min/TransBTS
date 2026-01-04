@@ -76,8 +76,7 @@ def main():
 
     model = torch.nn.DataParallel(model).cuda()
 
-    load_file = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                             'checkpoint', args.experiment+args.test_date, args.test_file)
+    load_file = '/kaggle/input/epoch-79/pytorch/default/1/model_epoch_last.pth'
 
     if os.path.exists(load_file):
         checkpoint = torch.load(load_file)
@@ -87,8 +86,8 @@ def main():
     else:
         print('There is no resume file to load!')
 
-    valid_list = os.path.join(args.root, args.valid_dir, args.valid_file)
-    valid_root = os.path.join(args.root, args.valid_dir)
+    valid_list = "/kaggle/working/TransBTS/data/train.txt"
+    valid_root = "/kaggle/input/brats2020-pkl/BraTS2020_pkl"
     valid_set = BraTS(valid_list, valid_root, mode='test')
     print('Samples for valid = {}'.format(len(valid_set)))
 
