@@ -88,7 +88,7 @@ def main():
         for i, data in enumerate(valid_loader):
             x, gt = data
             x = x.cuda(non_blocking=True)
-            gt = gt.numpy()[0]   # (H,W,D)
+            gt = gt.numpy()[0][..., :155]   # (H,W,D)
 
             logit = tailor_and_concat(x, model)
             pred = torch.argmax(logit, dim=1).cpu().numpy()[0]
