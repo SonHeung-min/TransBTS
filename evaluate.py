@@ -58,7 +58,7 @@ def main():
     model = torch.nn.DataParallel(model).cuda()
     model.eval()
 
-    checkpoint_path = "/kaggle/input/epoch-79/pytorch/default/1/model_epoch_last.pth"
+    checkpoint_path = "/kaggle/input/epoch-159/pytorch/default/1/model_epoch_last (2).pth"
     checkpoint = torch.load(checkpoint_path, weights_only=False)
     model.load_state_dict(checkpoint['state_dict'])
     print(f"Loaded checkpoint: {checkpoint_path}")
