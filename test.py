@@ -116,7 +116,8 @@ def main():
                          use_TTA=args.use_TTA,
                          save_format=args.save_format,
                          snapshot=True,
-                         postprocess=True
+                         postprocess=True,
+                         valid_in_train=True
                          )
 
     end_time = time.time()
