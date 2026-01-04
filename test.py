@@ -79,7 +79,7 @@ def main():
     load_file = '/kaggle/input/epoch-79/pytorch/default/1/model_epoch_last.pth'
 
     if os.path.exists(load_file):
-        checkpoint = torch.load(load_file, weight_only=False)
+        checkpoint = torch.load(load_file, weights_only=False)
         model.load_state_dict(checkpoint['state_dict'])
         # args.start_epoch = checkpoint['epoch']
         print('Successfully load checkpoint {}'.format(os.path.join(args.experiment+args.test_date, args.test_file)))
