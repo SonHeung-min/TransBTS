@@ -160,7 +160,8 @@ def main_worker():
     if resume and os.path.isfile(resume) and args.load:
         checkpoint = torch.load(
             resume,
-            map_location=lambda storage, loc: storage.cuda(args.local_rank)
+            map_location=lambda storage, loc: storage.cuda(args.local_rank),
+            weights_only=False
         )
 
         model.load_state_dict(checkpoint['state_dict'])
