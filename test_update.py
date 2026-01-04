@@ -76,7 +76,7 @@ def main():
 
     model = torch.nn.DataParallel(model).cuda()
 
-    load_file = '/kaggle/input/epoch-79/pytorch/default/1/model_epoch_last.pth'
+    load_file = '/kaggle/input/epoch-159/pytorch/default/1/model_epoch_last (2).pth'
 
     if os.path.exists(load_file):
         checkpoint = torch.load(load_file, weights_only=False)
